@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Highscore } from './highscore.model';
+import {ApiService} from "src/app/api/api.service"
 
 @Component({
   selector: 'app-highscore',
@@ -8,7 +9,7 @@ import { Highscore } from './highscore.model';
 })
 export class HighscorePage implements OnInit {
   public highscore: Array<Highscore>=new Array<Highscore>();
-  constructor() { 
+  constructor(private apiService) { 
     this.highscore.push(new Highscore("ALeq",20));
     this.highscore.push(new Highscore("ALin",60));
     this.highscore.push(new Highscore("Dan",40));
@@ -17,6 +18,9 @@ export class HighscorePage implements OnInit {
   }
 
   ngOnInit() {
+    this.apiService.getAllProducts().subscriber(res=>{
+      console.log(res);
+    });
   }
 
 }
