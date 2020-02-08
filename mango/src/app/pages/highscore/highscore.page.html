@@ -6,11 +6,13 @@
 
 <ion-content>
 <ion-list>
-  <ng-container *ngFor="let h of highscore">
+  <ng-container *ngFor="let p of products">
     <ion-item>
       <div class="d-flex justify-content-between" style="width:100%">
-      <div>{{h.name}}</div>
-      <div>{{h.score}}</div>
+      <div>{{p.id}}</div>
+      <div>{{p.name}}</div>
+      <div>{{p.description}}</div>
+
       </div>
     </ion-item>
   </ng-container>

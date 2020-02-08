@@ -7,11 +7,11 @@ const productRouter = require("./route/product.route");
 const userRouter=require("./route/user.route");
 
 //nou in cod
-/*
-const Product=require("/db-model/Product");
+
+const Product=require("/model/Product");
 
 const mongoose=require("mongoose");
-const url="mongodb://localhost:27017/pam2019";
+const url="mongodb://localhost:27017/login";
 
 mongoose.connect(url,{
   useNewUrlParser:true,
@@ -19,7 +19,7 @@ mongoose.connect(url,{
 
 });
 _fillUpDB();
- */
+ 
 
 app.use(cors());
 app.use("/", userRouter);
