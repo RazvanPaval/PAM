@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>play</ion-title>
+    <ion-title>Quiz</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,13 +8,25 @@
 <ion-content padding>
   <ion-card
     *ngFor="let quiz of quizList | async"
-    routerLink="/detail/{{quiz.id}}"
-  >
-    <ion-card-header>
-      {{ quiz.category }}
-    </ion-card-header>
-    <ion-card-content>
-      Artist Name: {{ quiz.quiz }}
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+>
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Question : {{ quiz.quiz }}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{ quiz.rquiz1}}</ion-label>
+        <ion-radio slot="start" color="success" value="apple"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ quiz.rquiz2 }}</ion-label>
+        <ion-radio slot="start" color="tertiary" value="grape" checked></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ quiz.rquiz3}}</ion-label>
+        <ion-radio slot="start" color="danger" value="cherry"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>

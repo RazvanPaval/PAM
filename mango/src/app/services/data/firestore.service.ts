@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import {  AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { firestore, constructor } from 'firebase';
 import { Quiz } from '../../models/quiz.interface';
+import { User } from '../../models/user.inteface';
 @Injectable({
   providedIn: 'root'  // <- ADD THIS
 })
@@ -23,6 +24,21 @@ return this.firestore.doc(`quizList/${id}`).set({
     rquiz1,
     rquiz2,
     rquiz3,
+  });
+}
+
+
+
+createUser(
+  email: string,
+  role: string,
+  score: Number,
+): Promise<void> {
+  const id = this.firestore.createId();
+return this.firestore.doc(`userList/${id}`).set({
+    email,
+    role,
+    score
   });
 }
 getQuizList(): AngularFirestoreCollection<Quiz> {

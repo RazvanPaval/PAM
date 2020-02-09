@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 })
 export class PlayPage implements OnInit {
 
-  public songList;
+  public quizList;
 constructor(
   private firestoreService: FirestoreService,
   private router: Router
 ) {}
 
   ngOnInit() {
-    this.songList = this.firestoreService.getQuizList().valueChanges();
+    this.quizList = this.firestoreService.getQuizList().valueChanges();
   }
 }
