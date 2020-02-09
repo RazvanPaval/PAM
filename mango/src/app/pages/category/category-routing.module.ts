@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CategoryPage } from './category.page';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +12,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [  
+    AngularFirestoreModule,RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class CategoryPageRoutingModule {}

@@ -1,9 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>category</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
+  <form [formGroup]="createQuizForm" (submit)="createQuiz()">
+    <ion-item>
+      <ion-label stacked>Categoy</ion-label>
+      <ion-input
+        formControlName="category"
+        type="text"
+        placeholder="Which category is it?"
+      >
+      </ion-input>
+    </ion-item>
 
-<ion-content>
+    <ion-item>
+      <ion-label stacked>Quiz</ion-label>
+      <ion-input
+        formControlName="quiz"
+        type="text"
+        placeholder="Quiz?"
+      >
+      </ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label stacked>Answer 1</ion-label>
+      <ion-input
+        formControlName="rquiz1"
+        type="text"
+        placeholder="What's the answer 1?"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Answer 2</ion-label>
+      <ion-input
+        formControlName="rquiz2"
+        type="text"
+        placeholder="What's the answer 2?"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Answer 3</ion-label>
+      <ion-input
+        formControlName="rquiz3"
+        type="text"
+        placeholder="What's the answer 3?"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!createQuizForm.valid">
+      Add Quiz
+    </ion-button>
+  </form>
 </ion-content>
